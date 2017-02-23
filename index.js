@@ -8,7 +8,7 @@ MongoClient.connect(mongoUrl, (err, db) => {
   const logs = db.collection('logs')
 
   app.use(express.static('public'))
-  app.get('/log', (req, res) => {
+  app.get('/log.js', (req, res) => {
     logs.insertOne({
         ts: Date.now(),
         ua: req.headers['user-agent'],
